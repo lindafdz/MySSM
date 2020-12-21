@@ -20,11 +20,6 @@ A=[(C*(R3^2)/(L*C*(R3+R4)))-((R2^2)/(L*(R1+R2)))-(R3/L)  -(C*R3)/(L*C*(R3+R4));R
 b=[(R2^2)/(L*R1*(R1+R2)) 0]';
 c=[0 1];
 d=0;
-sys=ss(A,b,c,d);
-step(sys)
-syms S
-ft1=simplfy(C*inv(s*eye(2)-A)*b);
-[n,d]=ss2tf(A,b,C,d)
-ft2=tf(n,d)
-impulse(sys)
-Pretty(ft1)
+ft1=simplify(c*inv(S*eye(2)-A)*b);
+
+pretty(ft1)
